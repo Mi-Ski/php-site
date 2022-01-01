@@ -19,12 +19,12 @@ if (isset($_POST['submit'])) {
 	// calling the function to insert values and check true/false
 	$isSuccess = $crud->insertAttendees($fname, $lname, $email, $phone, $specialty_id, $dob);
 	$specialtyName = $crud->getSpecialtyByID($specialty_id);
-	// if ($isSuccess) {
-	// 	SendMail::SendMail($email, 'Welcome to the IT conference!', 'You have successfully registered for this year\'s IT conference.');
-	// 	include './includes/success-message.php';
-	// } else {
-	// 	include './includes/error-message.php';
-	// }
+	if ($isSuccess) {
+		SendEmail::SendMail($email, 'You\'ve been signed up successfully!', 'Welcome to the IT Conference 2022!');
+		include './includes/success-message.php';
+	} else {
+		include './includes/error-message.php';
+	}
 }
 ?>
 
