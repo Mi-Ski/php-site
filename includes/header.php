@@ -56,14 +56,15 @@
 
 <body>
 
-	<h1>PHP basic examples:</h1>
-	<ul>
-		<li><a href="array.php">Simple array and printouts</a></li>
-		<li><a href="forloop.php">Simple for loop</a></li>
-		<li><a href="whiledowhileloop.php">While & Do While loop</a></li>
-		<li><a href="ifstatement.php">Basic if statement</a></li>
-		<li><a href="switchstatement.php">Simple switch statement</a></li>
-		<li><a href="stringmutation.php">String manipulation methods</a></li>
-		<li><a href="timedatemutation.php">Time and date manipulation methods</a></li>
-		<li><a href="functions.php">Functions</a></li>
-	</ul>
+	<div class="container d-flex" style="flex-direction: column; min-height: 100vh">
+		<h1>PHP basic examples:</h1>
+		<ul class="nav">
+			<li class="nav-item "><a data-toggle="tab" class="nav-link " href="array.php">Simple array and printouts</a></li>
+			<li class="nav-item"><a data-toggle="tab" class="nav-link" href="forloop.php">Simple for loop</a></li>
+			<li class="nav-item"><a data-toggle="tab" class="nav-link" href="whiledowhileloop.php">While & Do While loop</a></li>
+			<li class="nav-item"><a class="nav-link" href="ifstatement.php">Basic if statement</a></li>
+			<li class="nav-item"><a data-toggle="tab" class="nav-link" href="switchstatement.php">Simple switch statement</a></li>
+			<li class="nav-item"><a data-toggle="tab" class="nav-link" href="stringmutation.php">String manipulation methods</a></li>
+			<li class="nav-item"><a data-toggle="tab" class="nav-link" href="timedatemutation.php">Time and date manipulation methods</a></li>
+			<li class="nav-item"><a data-toggle="tab" class="nav-link" href="functions.php">Functions</a></li>
+		</ul>
