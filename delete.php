@@ -1,16 +1,16 @@
-<?php 
-	require_once 'db/db_config.php';
+<?php
+require_once 'db/db_config.php';
 
-	if($_GET['id']) {
-		 $id = $_GET['id'];
+if (!isset($_GET['id'])) {
+	include './includes/error-message.php';
+	header("Location: view_records.php");
+} else {
+	$id = $_GET['id'];
 
-		 $result = $crud->deleteAttendee($id); 
-		 if($result) {
-			 header("Location: view_records.php");
-		 }
-
+	$result = $crud->deleteAttendee($id);
+	if ($result) {
+		header("Location: view_records.php");
 	} else {
-		echo 'Error';
-		return;
+		include './includes/error-message.php';
 	}
-?>
+}

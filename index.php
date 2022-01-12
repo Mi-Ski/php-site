@@ -14,13 +14,13 @@ $crudSpecialtiesResult = $crud->getSpecialties();
     <form method="post" action="./success.php">
         <div class="mb-3">
             <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="emailHelp"
+            <input required type="text" class="form-control" id="firstName" name="firstName" aria-describedby="emailHelp"
                    placeholder="Enter First Name">
         </div>
 
         <div class="mb-3">
             <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="emailHelp"
+            <input required type="text" class="form-control" id="lastName" name="lastName" aria-describedby="emailHelp"
                    placeholder="Enter Last Name">
         </div>
 
@@ -42,12 +42,12 @@ $crudSpecialtiesResult = $crud->getSpecialties();
 
         <div class="mb-3">
             <label for="email" class="form-label">Email Address</label>
-            <input type="email" class="form-control" id="email" name="email">
+            <input required type="email" class="form-control" id="email" name="email">
         </div>
 
         <div class="mb-3">
             <label for="phone" class="form-label">Phone Number</label>
-            <input type="phone" class="form-control" id="phone" name="phone">
+            <input required type="phone" class="form-control" id="phone" name="phone">
         </div>
 
         <button type="submit" name="submit" class="btn btn-primary btn-lg">Submit</button>

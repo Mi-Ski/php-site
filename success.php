@@ -18,9 +18,9 @@ if (isset($_POST['submit'])) {
 	// calling the function to insert values and check true/false
 	$isSuccess = $crud->insertAttendees($fname, $lname, $email, $phone, $specialty_id, $dob);
 	if ($isSuccess) {
-		echo '<h1 class="text-center text-success">You have been registered!</h1>';
+		include './includes/success-message.php';
 	} else {
-		echo '<h1 class="text-center text-danger">There was an error in processing.</h1>';
+		include './includes/error-message.php';
 	}
 }
 ?>

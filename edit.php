@@ -6,12 +6,11 @@ require_once './includes/header.php';
 require_once './db/db_config.php';
 $crudSpecialtiesResult = $crud->getSpecialties();
 
-if (isset($_GET['id'])) {
-	$attendee = $crud->getAttendeeDetails($_GET['id']);
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+	include './includes/error-message.php';
+	header("Location: view_records.php");
 } else {
-	echo 'Error';
-	return;
-}
+	$attendee = $crud->getAttendeeDetails($_GET['id']);
 
 ?>
 
@@ -60,5 +59,6 @@ if (isset($_GET['id'])) {
 </form>
 
 <?php
+}
 require_once './includes/footer.php'
 ?>
