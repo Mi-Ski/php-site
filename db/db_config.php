@@ -1,17 +1,17 @@
 <?php 
 // local dev version
-	$host = '127.0.0.1';
-	$db = 'attendance';
-	$usr = 'root';
-	$pass = '';
-	$charset = 'utf8mb4';
+	// $host = '127.0.0.1';
+	// $db = 'attendance';
+	// $usr = 'root';
+	// $pass = '';
+	// $charset = 'utf8mb4';
 
 	// remote db version
-	// $host = 'sql11.freesqldatabase.com';
-	// $db = 'sql11473871';
-	// $user = 'sql11473871';
-	// $pass = 'gNnexGLIga';
-	// $charset = 'utf8mb4';
+	$host = 'sql11.freesqldatabase.com';
+	$db = 'sql11473871';
+	$user = 'sql11473871';
+	$pass = 'gNnexGLIga';
+	$charset = 'utf8mb4';
 
 
 	$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
