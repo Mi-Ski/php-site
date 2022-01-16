@@ -9,7 +9,7 @@
 	// remote db version
 	$host = 'sql11.freesqldatabase.com';
 	$db = 'sql11473871';
-	$user = 'sql11473871';
+	$usr = 'sql11473871';
 	$pass = 'gNnexGLIga';
 	$charset = 'utf8mb4';
 
@@ -18,7 +18,7 @@
 
 	try {
 		$pdo = new PDO($dsn, $usr, $pass);
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION, !PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT);
 
 	} catch(PDOException $e) {
 		$error = $e->getMessage();
