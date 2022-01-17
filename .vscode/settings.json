@@ -76,7 +76,7 @@
     }
   ],
   "files.exclude": {
-    ""
+    "intro": true
     // ".gitignore": true,
     // "**/ErrorBoundary": true,
     // "config": true,
