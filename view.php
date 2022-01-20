@@ -3,6 +3,7 @@ $title = 'Registration Details';
 $homeCurrent = "";
 $attendeesCurrent = '';
 require_once './includes/header.php';
+require_once './includes/auth-check.php';
 require_once './db/db_config.php';
 
 // Get attendee by id

@@ -1,23 +1,23 @@
 <?php 
 // local dev version
-	// $host = '127.0.0.1';
-	// $db = 'attendance';
-	// $user = 'root';
-	// $pass = '';
-	// $charset = 'utf8mb4';
+	$host = '127.0.0.1';
+	$db = 'attendance';
+	$usr = 'root';
+	$pass = '';
+	$charset = 'utf8mb4';
 
 	// remote db version
-	$host = 'sql11.freesqldatabase.com';
-	$db = 'sql11473871';
-	$user = 'sql11473871';
-	$pass = 'gNnexGLIga';
-	$charset = 'utf8mb4';
+	// $host = 'sql11.freesqldatabase.com';
+	// $db = 'sql11473871';
+	// $user = 'sql11473871';
+	// $pass = 'gNnexGLIga';
+	// $charset = 'utf8mb4';
 
 
 	$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
 	try {
-		$pdo = new PDO($dsn, $user, $pass);
+		$pdo = new PDO($dsn, $usr, $pass);
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	} catch(PDOException $e) {
@@ -29,4 +29,8 @@
 
 	require_once 'crud.php';
 	$crud = new crud($pdo);
+	require_once 'user.php';
+	$user = new user($pdo);
+
+	$user->insertUser('admin', 'password');
 ?>

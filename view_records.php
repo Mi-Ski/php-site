@@ -3,6 +3,7 @@ $title = 'Attendee list';
 $homeCurrent = "";
 $attendeesCurrent = '(current)';
 require_once './includes/header.php';
+require_once './includes/auth-check.php';
 require_once './db/db_config.php';
 
 $results = $crud->getAttendees();
@@ -14,7 +15,7 @@ $results = $crud->getAttendees();
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>Specialty</th>
-		<th style="text-align: center;">Actions</th>
+<th style="text-align: center;">Actions</th>
 	</tr>
 	<?php while ($r = $results->fetch(PDO::FETCH_ASSOC)) { ?>
 		<tr>
