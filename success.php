@@ -1,5 +1,7 @@
 <?php
 $title = 'Success';
+$homeCurrent = '';
+$attendeesCurrent = '';
 require_once './includes/header.php';
 require_once './db/db_config.php';
 
@@ -14,7 +16,7 @@ if (isset($_POST['submit'])) {
 	$phone = $_POST['phone'];
 
 	// calling the function to insert values and check true/false
-	$isSuccess = $crud->insert($fname, $lname, $email, $phone, $specialty_id, $dob);
+	$isSuccess = $crud->insertAttendees($fname, $lname, $email, $phone, $specialty_id, $dob);
 	if ($isSuccess) {
 		echo '<h1 class="text-center text-success">You have been registered!</h1>';
 	} else {
