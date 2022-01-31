@@ -18,7 +18,7 @@
 
 	try {
 		$pdo = new PDO($dsn, $usr, $pass);
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION, !PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT);
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	} catch(PDOException $e) {
 		$error = $e->getMessage();
