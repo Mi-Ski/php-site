@@ -15,10 +15,18 @@ if (isset($_POST['submit'])) {
 	$specialty_id = $_POST['specialty'];
 	$email = $_POST['email'];
 	$phone = $_POST['phone'];
+	
+	$orig_file = $_FILES['avatar']['tmp_name'];
+	$ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+	$target_dir = 'uploads/';
+	$destination = $target_dir . $phone . '.' . $ext;
+	move_uploaded_file($orig_file, $destination); 
+
 
 	// calling the function to insert values and check true/false
-	$isSuccess = $crud->insertAttendees($fname, $lname, $email, $phone, $specialty_id, $dob);
+	$isSuccess = $crud->insertAttendees($fname, $lname, $email, $phone, $specialty_id, $dob, $destination);
 	$specialtyName = $crud->getSpecialtyByID($specialty_id);
+
 	if ($isSuccess) {
 		SendEmail::SendMail($email, 'You\'ve been signed up successfully!', 'Welcome to the IT Conference 2022!');
 		include './includes/success-message.php';
@@ -30,6 +38,7 @@ if (isset($_POST['submit'])) {
 
 
 <div class="card" style="width: 18rem;">
+<img style="border-radius: 50%;" class="profile-pic" src="<?php echo $destination ?>" alt="profile picture">
 	<div class="card-body">
 		<h5 class="card-title"><?php echo $_POST['firstName'] . ' ' . $_POST['lastName'] ?></h5>
 		<h6 class="card-subtitle mb-2 text-muted">Expertise: <?php echo $specialtyName['name'] ?></h6>

@@ -9,11 +9,11 @@ class crud
 	}
 
 	// insert a new record to the DB
-	public function insertAttendees($fname, $lname, $email, $phone, $specialty_id, $dob)
+	public function insertAttendees($fname, $lname, $email, $phone, $specialty_id, $dob, $avatar_path)
 	{
 		try {
 			// define SQL statement 
-			$sql = "INSERT INTO attendee(firstname, lastname, dateofbirth, emailaddress, contactnumber, specialty_id) VALUES(:fname,:lname,:dob,:email,:phone,:specialty_id)";
+			$sql = "INSERT INTO attendee(firstname, lastname, dateofbirth, emailaddress, contactnumber, specialty_id, avatar_path) VALUES(:fname,:lname,:dob,:email,:phone,:specialty_id,:avatar_path)";
 			// prepare SQL statement for execution
 			$statement = $this->db->prepare($sql);
 
@@ -24,6 +24,7 @@ class crud
 			$statement->bindparam(':phone', $phone);
 			$statement->bindparam(':specialty_id', $specialty_id);
 			$statement->bindparam(':dob', $dob);
+			$statement->bindparam(':avatar_path', $avatar_path);
 
 			$statement->execute();
 			return true;

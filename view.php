@@ -18,6 +18,8 @@ if(isset($_GET['id'])) {
 ?>
 
 <div class="card" style="width: 18rem;">
+
+<img style="border-radius: 50%;" class="profile-pic" src="<?php echo empty($result['avatar_path']) ? "uploads/blank.jpg" : $result['avatar_path'] ?>" alt="profile picture">
 	<div class="card-body">
 		<h5 class="card-title"><?php echo $result['firstname'] . ' ' . $result['lastname'] ?></h5>
 		<h6 class="card-subtitle mb-2 text-muted">Expertise: <?php echo $result['name'] ?></h6>
